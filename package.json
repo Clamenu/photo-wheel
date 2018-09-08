@@ -9,7 +9,9 @@
   },
   "scripts": {
     "start": "nodemon server/index.js",
-    "react-dev": "webpack -d --watch"
+    "react-dev": "webpack -d --watch",
+    "seed": "mysql -u root -pnick < schema.sql && node database/seed.js",
+    "seed1": "node database/seed2.js"
   },
   "dependencies": {
     "express": "^4.16.3",
@@ -25,7 +27,10 @@
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.2",
+    "bluebird": "^3.5.2",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "faker": "^4.1.0",
+    "mysql": "^2.16.0",
     "webpack-cli": "^3.1.0"
   }
 }
