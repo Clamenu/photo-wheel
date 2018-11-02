@@ -43,9 +43,9 @@ class Modal extends React.Component {
     } else {
       return (
         <div id="modal" className={styles.modal} onClick={(e) => this.props.exitModalWindow(e)}>
-	        <span className={styles.closeModal} onClick={() => this.props.closeModal()}>Close X</span>
+          <span className={styles.closeModal} onClick={() => this.props.closeModal()}>Close X</span>
 
-	        <div className={styles.modalBox}>
+          <div className={styles.modalBox}>
             <div id="modalbody" className={styles.photoBox} onClick={(e) => this.props.nextModalPic(e)}>
 
               <Arrow direction="left" modal="true" clickHandler={this.props.prevPic}/>
