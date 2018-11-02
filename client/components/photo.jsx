@@ -16,15 +16,15 @@ class Photo extends React.Component {
   }
 
   render() {
-  	var userIndex = 0;
-  	for(var i = 0; i < this.props.users.length; i++) {
-  		if(this.props.users[i].user_id === this.props.photo.user) {
+    let userIndex = 0;
+    for(let i = 0; i < this.props.users.length; i++) {
+  	  if(this.props.users[i].user_id === this.props.photo.user) {
         userIndex = i;
         break;
   		}
   	}
-  	var displayCaption = this.state.caption ? styles.spanShow : styles.spanHide;
-    var imageAfter = this.state.caption ? styles.imageAfter : styles.image;
+  	let displayCaption = this.state.caption ? styles.spanShow : styles.spanHide;
+    let imageAfter = this.state.caption ? styles.imageAfter : styles.image;
 
 	  if(this.props.users.length === 0) {
 		  return (

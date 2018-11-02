@@ -12,15 +12,15 @@ class Modal extends React.Component {
   	}
   }
 
-  changeState(state) {
+  highlightButton(state) {
   	this.setState({
   		[state]: !this.state[state]
   	})
   }
 
 	render() {
-		var userIndex = 0;
-  	for(var i = 0; i < this.props.users.length; i++) {
+		let userIndex = 0;
+  	for(let i = 0; i < this.props.users.length; i++) {
   		if(this.props.users[i].user_id === this.props.photos[this.props.index].user) {
         userIndex = i;
         break;
@@ -28,15 +28,15 @@ class Modal extends React.Component {
   	}
 
     if(this.props.users.length > 0) {
-	    var isElite = this.props.users[userIndex].elite ? styles.elite : styles.notElite;
+	    let isElite = this.props.users[userIndex].elite ? styles.elite : styles.notElite;
     }
     
-    var shareIcon = this.state.share ? styles.whiteShareIcon : styles.greyShareIcon;
-    var share = this.state.share ? styles.whiteShare : styles.greyShare;
-    var browseIcon = this.state.browse ? styles.whiteBrowseIcon : styles.greyBrowseIcon;
-    var browse = this.state.browse ? styles.whiteBrowse : styles.greyBrowse;
-    var complimentIcon = this.state.compliment ? styles.whiteComplimentIcon : styles.greyComplimentIcon;
-    var compliment = this.state.compliment ? styles.whiteCompliment : styles.greyCompliment;
+    let shareIcon = this.state.share ? styles.whiteShareIcon : styles.greyShareIcon;
+    let share = this.state.share ? styles.whiteShare : styles.greyShare;
+    let browseIcon = this.state.browse ? styles.whiteBrowseIcon : styles.greyBrowseIcon;
+    let browse = this.state.browse ? styles.whiteBrowse : styles.greyBrowse;
+    let complimentIcon = this.state.compliment ? styles.whiteComplimentIcon : styles.greyComplimentIcon;
+    let compliment = this.state.compliment ? styles.whiteCompliment : styles.greyCompliment;
 
     if(!this.props.isOpen) {
     	return null;
@@ -53,11 +53,11 @@ class Modal extends React.Component {
               <Arrow direction="right" modal="true" clickHandler={this.props.nextPic}/>
 
               <div className={styles.footer}>
-                <div className={styles.browse} onMouseEnter={() => this.changeState('browse')} onMouseLeave={() => this.changeState('browse')}><span className={browseIcon}></span><span className={browse}>Browse all</span></div>
+                <div className={styles.browse} onMouseEnter={() => this.highlightButton('browse')} onMouseLeave={() => this.highlightButton('browse')}><span className={browseIcon}></span><span className={browse}>Browse all</span></div>
                 <span className={styles.pageCount}>{this.props.index + 1} of {this.props.photos.length}</span>
-                <div className={styles.share} onMouseEnter={() => this.changeState('share')} onMouseLeave={() => this.changeState('share')}><span className={shareIcon}></span><span className={share}>Share</span></div>
-                <div className={styles.compliment} onMouseEnter={() => this.changeState('compliment')} onMouseLeave={() => this.changeState('compliment')}><span className={complimentIcon}></span><span className={compliment}>Compliment</span></div>
-                <div className={styles.report} onMouseEnter={() => this.changeState('report')} onMouseLeave={() => this.changeState('report')}><span className={styles.whiteReportIcon}></span></div>
+                <div className={styles.share} onMouseEnter={() => this.highlightButton('share')} onMouseLeave={() => this.highlightButton('share')}><span className={shareIcon}></span><span className={share}>Share</span></div>
+                <div className={styles.compliment} onMouseEnter={() => this.highlightButton('compliment')} onMouseLeave={() => this.highlightButton('compliment')}><span className={complimentIcon}></span><span className={compliment}>Compliment</span></div>
+                <div className={styles.report} onMouseEnter={() => this.highlightButton('report')} onMouseLeave={() => this.highlightButton('report')}><span className={styles.whiteReportIcon}></span></div>
               </div>
             </div>
             <div className={styles.userBox}>

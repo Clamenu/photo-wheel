@@ -34,7 +34,7 @@ componentWillMount() {
 }
 
 getData() {
-  var url = window.location.pathname.substring(1, window.location.pathname.length - 1).toLowerCase();
+  let url = window.location.pathname.substring(1, window.location.pathname.length - 1).toLowerCase();
   $.ajax({
     method: 'GET',
     url: `/api/photos/${url}/restaurants`,
@@ -67,8 +67,8 @@ getData() {
 }
 //----------Carousel Pictures--------------
 previousPicture() {
-	var index = this.state.index;
-  var length = this.state.photos.length;
+  let index = this.state.index;
+  let length = this.state.photos.length;
   if (index === 0) {
   	return;
   }
@@ -79,8 +79,8 @@ previousPicture() {
 }
 
 nextPicture() {
-	var index = this.state.index;
-  var length = this.state.photos.length;
+  let index = this.state.index;
+  let length = this.state.photos.length;
   if (index === length-3) {
   	return;
   }
@@ -98,8 +98,8 @@ defaultPicture(e) {
 
 //-----------------Modal Picture-----------
 previousModalPicture() {
-  var index = this.state.currentModalPicture;
-  var length = this.state.photos.length;
+  let index = this.state.currentModalPicture;
+  let length = this.state.photos.length;
   if (index === 0) {
     return;
   }
@@ -110,8 +110,8 @@ previousModalPicture() {
 }
 
 nextModalPicture() {
-  var index = this.state.currentModalPicture;
-  var length = this.state.photos.length;
+  let index = this.state.currentModalPicture;
+  let length = this.state.photos.length;
   if (index === length-1) {
     return;
   }
@@ -123,8 +123,8 @@ nextModalPicture() {
 
 nextModalPictureBody(e) {
   if(e.target.id === 'modalbody' || e.target.id === 'photobody') {
-    var index = this.state.currentModalPicture;
-    var length = this.state.photos.length;
+    let index = this.state.currentModalPicture;
+    let length = this.state.photos.length;
     if (index === length-1) {
       return;
     }
@@ -142,7 +142,7 @@ showModal(e) {
 }
 
 detectModalNumber(e) {
-  var num = parseInt(e.target.id) + this.state.index;
+  let num = parseInt(e.target.id) + this.state.index;
   this.setState({
     currentModalPicture: num
   })
@@ -157,7 +157,7 @@ exitModalWindow(e) {
 }
 
 render() {
-  var shouldDefault = !this.state['0'] && !this.state['1'] && !this.state['2'] ? true : false
+  let shouldDefault = !this.state['0'] && !this.state['1'] && !this.state['2'] ? true : false
 	return (
     <div className={styles.modalContainer}>
       <div className={styles.container}>
