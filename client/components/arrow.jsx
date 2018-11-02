@@ -5,11 +5,11 @@ const Arrow = ({direction, modal, clickHandler}) => {
   let classname;
   if (direction === 'right' && modal) {
     classname = styles.arrowrightmodal;
-	} else if (direction === 'left' && modal) {
+  } else if (direction === 'left' && modal) {
     classname = styles.arrowleftmodal;
-	} else if (direction === 'right') {
+  } else if (direction === 'right') {
     classname = styles.arrowright;
-	} else if (direction === 'left') {
+  } else if (direction === 'left') {
     classname = styles.arrowleft;
   }
   return(

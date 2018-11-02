@@ -1,5 +1,5 @@
-var data = require('../YelpData.js');
-var db = require('./index.js').db;
+const data = require('../YelpData.js');
+const db = require('./index.js').db;
 
 console.log('starting first seed')
 db.query('INSERT INTO restaurants (name) VALUES ?', [data.businessNames], function (err, res) {
@@ -11,7 +11,7 @@ db.query('INSERT INTO restaurants (name) VALUES ?', [data.businessNames], functi
 	}
 });
 
-var secondSeed = function() {
+let secondSeed = function() {
 db.query("INSERT INTO users (name, elite, friends, reviews, avatar) VALUES ?", [data.users], (err) => {
   if(err) {
   	console.log('second seed error', err)
@@ -22,7 +22,7 @@ db.query("INSERT INTO users (name, elite, friends, reviews, avatar) VALUES ?", [
 });
 }
 
-var finalSeed = function() {
+let finalSeed = function() {
 	db.query("INSERT INTO pictures (url, postdate, caption, user, restaurant) VALUES ?", [data.photoData], (err) => {
 	  if(err) {
 	  	console.log('hello', err);

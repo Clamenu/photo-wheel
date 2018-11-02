@@ -13,9 +13,9 @@ class Modal extends React.Component {
   }
 
   highlightButton(state) {
-  	this.setState({
-  		[state]: !this.state[state]
-  	})
+    this.setState({
+      [state]: !this.state[state]
+    })
   }
 
   render() {
@@ -66,9 +66,9 @@ class Modal extends React.Component {
                 <img className={styles.avatar} src={this.props.users[userIndex].avatar}/>
                 <span className={styles.userName}>{this.props.users[userIndex].name}</span><br></br>
                 <div className={styles.friendRev}>
-	                <img src="https://s3-us-west-1.amazonaws.com/yelpreactor/friends.png" className={styles.friendsIcon}/><span className={styles.userFriends}>{this.props.users[userIndex].friends}</span>
-	                <img src="https://s3-us-west-1.amazonaws.com/yelpreactor/reviews.png" className={styles.reviewsIcon}/><span className={styles.userReviews}>{this.props.users[userIndex].reviews}</span>
-	                <span className={isElite}>Elite '18</span>
+                  <img src="https://s3-us-west-1.amazonaws.com/yelpreactor/friends.png" className={styles.friendsIcon}/><span className={styles.userFriends}>{this.props.users[userIndex].friends}</span>
+                  <img src="https://s3-us-west-1.amazonaws.com/yelpreactor/reviews.png" className={styles.reviewsIcon}/><span className={styles.userReviews}>{this.props.users[userIndex].reviews}</span>
+                  <span className={isElite}>Elite '18</span>
                 </div>
               </div>
 
@@ -87,9 +87,9 @@ class Modal extends React.Component {
               </div>
 
             </div>  
-	         </div>
-	       </div>  
-	     );	
+           </div>
+         </div>  
+       );  
     }
   }
 }

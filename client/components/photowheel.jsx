@@ -81,7 +81,7 @@ previousPicture() {
 nextPicture() {
   let index = this.state.index;
   let length = this.state.photos.length;
-  if (index === length-3) {
+  if (index === length - 3) {
     return;
   }
   index += 1;
@@ -112,7 +112,7 @@ previousModalPicture() {
 nextModalPicture() {
   let index = this.state.currentModalPicture;
   let length = this.state.photos.length;
-  if (index === length-1) {
+  if (index === length - 1) {
     return;
   }
   index += 1;
@@ -125,7 +125,7 @@ nextModalPictureBody(e) {
   if(e.target.id === 'modalbody' || e.target.id === 'photobody') {
     let index = this.state.currentModalPicture;
     let length = this.state.photos.length;
-    if (index === length-1) {
+    if (index === length - 1) {
       return;
     }
     index += 1;
@@ -149,7 +149,7 @@ detectModalNumber(e) {
 }
 
 exitModalWindow(e) {
-  if(e.target.id === "modal") {
+  if (e.target.id === "modal") {
     this.setState({
       isModalOpen: !this.state.isModalOpen
     });

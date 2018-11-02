@@ -1,7 +1,7 @@
-var mysql = require('mysql');
+const mysql = require('mysql');
 
 
-var db = mysql.createConnection({
+let db = mysql.createConnection({
 	multipleStatements: true,
   host: 'localhost',
   user: 'root',
@@ -17,7 +17,7 @@ db.connect((err) => {
 	console.log('connected to db');
 });
 
-var getAllPicturesById = function(restaurant, cb) {
+let getAllPicturesById = function(restaurant, cb) {
 	db.query(`SELECT url, postdate, caption, user FROM pictures WHERE restaurant = ${restaurant}`, (err, result) => {
 	  if(err) {
 	  	cb(err);
@@ -27,7 +27,7 @@ var getAllPicturesById = function(restaurant, cb) {
 	});
 }
 
-var getAllPicturesByName = function(restaurant, cb) {
+let getAllPicturesByName = function(restaurant, cb) {
 	db.query(`SELECT url, postdate, caption, user FROM pictures WHERE restaurant IN ( SELECT id FROM restaurants WHERE name = '${restaurant}')`, (err, result) => {
 	  if(err) {
 	  	cb(err);
@@ -37,7 +37,7 @@ var getAllPicturesByName = function(restaurant, cb) {
 	});
 }
 
-var getAllUsers = function(users, cb) {
+let getAllUsers = function(users, cb) {
 	db.query(`SELECT * FROM users where user_id in (${users})`, (err, result) => {
 	  if(err) {
 	  	cb(err);

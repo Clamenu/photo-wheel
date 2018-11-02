@@ -1,10 +1,10 @@
-var express = require('express');
-var app = express();
-var parser = require('body-parser');
-var db = require('../database/index.js');
-var cors = require('cors');
+const express = require('express');
+const app = express();
+const parser = require('body-parser');
+const db = require('../database/index.js');
+const cors = require('cors');
 
-var corsOptions = {
+const corsOptions = {
   origin: 'http://localhost:3005',
   optionsSuccessStatus: 200
 }
@@ -74,7 +74,7 @@ app.get('/api/photos/:idOrName/users', cors(corsOptions), (req, res) => {
 });
 
 
-var port = process.env.PORT || 3001;
+const port = process.env.PORT || 3001;
 
 app.listen(port, () => console.log("Connected on port 3001"));
 
