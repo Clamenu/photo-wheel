@@ -18,7 +18,7 @@ class Photo extends React.Component {
   render() {
     let userIndex = 0;
     for(let i = 0; i < this.props.users.length; i++) {
-  	  if(this.props.users[i].user_id === this.props.photo.user) {
+      if(this.props.users[i].user_id === this.props.photo.user) {
         userIndex = i;
         break;
   		}

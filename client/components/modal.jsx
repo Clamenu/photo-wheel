@@ -4,12 +4,12 @@ import Arrow from './arrow.jsx';
 
 class Modal extends React.Component {
   constructor(props) {
-  	super(props);
-  	this.state = {
-  		share: false,
-  		browse: false,
-  		compliment: false
-  	}
+    super(props);
+    this.state = {
+      share: false,
+      browse: false,
+      compliment: false
+    }
   }
 
   highlightButton(state) {
@@ -18,17 +18,17 @@ class Modal extends React.Component {
   	})
   }
 
-	render() {
-		let userIndex = 0;
-  	for(let i = 0; i < this.props.users.length; i++) {
-  		if(this.props.users[i].user_id === this.props.photos[this.props.index].user) {
+  render() {
+    let userIndex = 0;
+    for (let i = 0; i < this.props.users.length; i++) {
+      if (this.props.users[i].user_id === this.props.photos[this.props.index].user) {
         userIndex = i;
         break;
-  		}
-  	}
+      }
+    }
 
-    if(this.props.users.length > 0) {
-	    let isElite = this.props.users[userIndex].elite ? styles.elite : styles.notElite;
+    if (this.props.users.length > 0) {
+      let isElite = this.props.users[userIndex].elite ? styles.elite : styles.notElite;
     }
     
     let shareIcon = this.state.share ? styles.whiteShareIcon : styles.greyShareIcon;
@@ -38,17 +38,17 @@ class Modal extends React.Component {
     let complimentIcon = this.state.compliment ? styles.whiteComplimentIcon : styles.greyComplimentIcon;
     let compliment = this.state.compliment ? styles.whiteCompliment : styles.greyCompliment;
 
-    if(!this.props.isOpen) {
-    	return null;
+    if (!this.props.isOpen) {
+      return null;
     } else {
-	    return(
-	      <div id="modal" className={styles.modal} onClick={(e) => this.props.exitModalWindow(e)}>
+      return (
+        <div id="modal" className={styles.modal} onClick={(e) => this.props.exitModalWindow(e)}>
 	        <span className={styles.closeModal} onClick={() => this.props.closeModal()}>Close X</span>
 
 	        <div className={styles.modalBox}>
             <div id="modalbody" className={styles.photoBox} onClick={(e) => this.props.nextModalPic(e)}>
 
-            	<Arrow direction="left" modal="true" clickHandler={this.props.prevPic}/>
+              <Arrow direction="left" modal="true" clickHandler={this.props.prevPic}/>
               <img id="photobody" className={styles.image} src={this.props.photos[this.props.index].url}/>
               <Arrow direction="right" modal="true" clickHandler={this.props.nextPic}/>
 
@@ -87,11 +87,11 @@ class Modal extends React.Component {
               </div>
 
             </div>  
-	        </div>
-	      </div>  
-	    );	
+	         </div>
+	       </div>  
+	     );	
     }
-	}
+  }
 }
 
 export default Modal;

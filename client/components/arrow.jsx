@@ -12,12 +12,12 @@ const Arrow = ({direction, modal, clickHandler}) => {
 	} else if (direction === 'left') {
     classname = styles.arrowleft;
   }
-	return(
-	  <span
-		  className={classname}
-		  onClick={() => clickHandler()}>
-		</span>
-	);
+  return(
+    <span
+      className={classname}
+      onClick={() => clickHandler()}>
+    </span>
+  );
 };
 
 export default Arrow;
